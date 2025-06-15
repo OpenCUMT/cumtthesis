@@ -2,8 +2,8 @@ name: Deploy wiki Pages
 
 on:
   push:
-    branches: [pages]
-  # 仅在 pages 分支上推送时触发部署
+    branches: [wiki]
+  # 仅在 wiki 分支上推送时触发部署
 
   workflow_dispatch:
 
@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 确保获取完整的提交历史记录
-          ref: pages # 确保在 pages 分支上运行
+          ref: wiki # 确保在 wiki 分支上运行
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
